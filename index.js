@@ -124,19 +124,20 @@ while (
   turnBasedCombat += 1;
   console.log(`💪 Début du tour ${turnBasedCombat} 💪`);
   // les héros attaque un monstre au hasard
-  heroesinParty.forEach(hero)
-advancedFightsforHeroesOnly()
-  
-
-  // ensuite on for each les monstres du tableau contre le héros
-  arrayEncounterOne.forEach((d) => {
+  heroesinParty.forEach((hero) => {
+  if (hero.life > 0) {
+    advancedFightsforHeroesOnly(hero.name)
+  }  })
+  // ensuite on for each les monstres du tableau contre les héros
+  arrayfinalBoss.forEach((d) => {
     if (d.life > 0) {
-      d.fight(heroofLight);
+ const randomIndex = randomNumberGeneration(heroesinParty)
+      d.fight(heroesinParty[randomIndex]);
     }
   });
 }
 gameOver(
-  heroofLight,
+  heroesinParty[0],
   arrayEncounterOne[0],
   arrayEncounterOne[1],
   arrayEncounterOne[2]
