@@ -16,10 +16,14 @@ const {
   heroofMetal,
 } = require("./arraysdatacharactersrelated/heroesCreationandArray.js");
 //dossier gamemechanics
+const {
+  giftingSwordorShield,
+} = require("./gamemechanics/giftingEquipement.js");
 const { gameOver } = require("./gamemechanics/gameover.js");
 const { lootGeneration } = require("./gamemechanics/lootgeneration.js");
 const {
   recruitaRandomHero,
+  heroesinParty,
 } = require("./gamemechanics/recruitrandomheroes.js");
 const {
   randomNumberGeneration,
@@ -97,12 +101,47 @@ gameOver(
   arrayEncounterOne[2]
 );
 // on vérifie bien si notre héros est en vie, si c'est le cas on lance une boucle sur les monstres pour connaitre le loot
-heroofLight.life > 0
-  ? arrayEncounterOne.forEach((a) => lootGeneration(heroofLight, a))
-  : "";
-//
-//
-// pause entre les deux phases de jeu
-// on arrive au combat final
-// mais le héros recrutera avant cela 2 alliés
-heroofLight.life > 0 ? recruitaRandomHero() : "";
+if (heroofLight.life > 0) {
+  arrayEncounterOne.forEach((a) => lootGeneration(heroofLight, a));
+  // on arrive au combat final
+  // mais le héros recrutera avant cela 2 alliés
+  recruitaRandomHero();
+  recruitaRandomHero();
+  giftingSwordorShield(heroofLight);
+}
+// le nombre de tours pour les combats
+turnBasedCombat = 0;
+while (
+  (heroofLight.life > 0 ||
+    heroesinParty[1].life > 0 ||
+    heroesinParty[2].life > 0) &&
+  (arrayEncounterOne[0].life > 0 ||
+    arrayEncounterOne[1].life > 0 ||
+    arrayEncounterOne[2].life > 0)
+) {
+
+  // le tour commence
+  turnBasedCombat += 1;
+  console.log(`💪 Début du tour ${turnBasedCombat} 💪`);
+  // les héros attaque un monstre au hasard
+  heroesinParty.forEach(hero)
+advancedFightsforHeroesOnly()
+  
+
+  // ensuite on for each les monstres du tableau contre le héros
+  arrayEncounterOne.forEach((d) => {
+    if (d.life > 0) {
+      d.fight(heroofLight);
+    }
+  });
+}
+gameOver(
+  heroofLight,
+  arrayEncounterOne[0],
+  arrayEncounterOne[1],
+  arrayEncounterOne[2]
+);
+
+
+
+}

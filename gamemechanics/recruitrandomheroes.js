@@ -29,4 +29,4 @@ const recruitaRandomHero = () => {
   }
 };
 
-module.exports = { recruitaRandomHero };
+module.exports = { recruitaRandomHero, heroesinParty };
