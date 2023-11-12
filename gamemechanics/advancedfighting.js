@@ -3,6 +3,7 @@ const {
   arrayEncounterOne,
   everyMonsters,
 } = require("../arraysdatacharactersrelated/monstersCreationandArray.js");
+const { binaryRandom } = require("./binaryRandom");
 // pour determiner des effets spéciaux sur mes attaques, je dois simplement l'appeler dans une autre fonction
 // dans la nouvelle, je pourrais cibler defender et le donner en argument à fight()
 const advancedFightsforHeroesOnly = (fighter) => {
@@ -17,8 +18,7 @@ const advancedFightsforHeroesOnly = (fighter) => {
     fighter.fight(defender);
   } else if (fighter.name === "Laios, Roi Gourmet") {
     // Laios a une chance de ne pas attaquer un monstre et passer son tour à l'admirer
-    const arrayBinary = [0, 1];
-    const laiosDoingNothing = randomNumberGeneration(arrayBinary);
+    const laiosDoingNothing = binaryrandom();
     laiosDoingNothing === 0
       ? console.log("Laios admire le monstre sous toutes ses coutures")
       : fighter.fight(defender);
