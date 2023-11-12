@@ -50,7 +50,6 @@ const {
 let randomEncounter = 1;
 // le nombre de tours pour les combats
 let turnBasedCombat = 0;
-console.log(arrayEncounterOne);
 //
 //
 //
@@ -88,25 +87,31 @@ console.log(arrayEncounterOne);
 //   arrayEncounterOne.forEach((d) => {
 //     if (d.life > 0) {
 //       d.fight(heroofLight);
-
-//       console.log(
-//         `${d.name} attaque ⚔️  ${heroofLight.name} : il reste ${heroofLight.life} 💖 point de vie au héros !`
-//       );
 //     }
 //   });
 // }
-// console.log(arrayEncounterOne[0]);
-
 // gameOver(
 //   heroofLight,
 //   arrayEncounterOne[0],
 //   arrayEncounterOne[1],
 //   arrayEncounterOne[2]
 // );
-// on vérifie bien si notre héros est en vie, si c'est le cas on lance une boucle sur les monstres pour connaitre le loot
-heroofLight.life > 0
-  ? arrayEncounterOne.forEach((a) => lootGeneration(heroofLight, a))
-  : "";
-heroofLight.fight(everyMonsters[3]);
-advancedFightsforHeroesOnly(heroofGold);
-advancedFightsforHeroesOnly(heroofMetal);
+// // on vérifie bien si notre héros est en vie, si c'est le cas on lance une boucle sur les monstres pour connaitre le loot
+// heroofLight.life > 0
+//   ? arrayEncounterOne.forEach((a) => lootGeneration(heroofLight, a))
+//   : "";
+// //
+// //
+// // pause entre les deux phases de jeu
+// // on arrive au combat final
+// // mais le héros recrutera avant cela 2 alliés
+// heroofLight.life > 0 ? recruitaRandomHero() : "";
+lootGeneration(heroofLight, everyMonsters[1]);
+lootGeneration(heroofLight, everyMonsters[1]);
+lootGeneration(heroofLight, everyMonsters[1]);
+lootGeneration(heroofLight, everyMonsters[1]);
+lootGeneration(heroofLight, everyMonsters[1]);
+lootGeneration(heroofLight, everyMonsters[1]);
+lootGeneration(heroofLight, everyMonsters[1]);
+lootGeneration(heroofLight, everyMonsters[1]);
+lootGeneration(heroofLight, everyMonsters[1]);

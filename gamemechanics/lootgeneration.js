@@ -42,7 +42,7 @@ const lootGeneration = (hero1, monster1) => {
         } else {
           // sinon je renvoie juste un texte indiquant que l'objet n'est pas si bien que ça
           console.log(
-            `L'équipement trouvé par ${hero1.name} sur le cadavre de ${monster1.name} n'est malheureusement pas au niveau de son ${hero1.weapon.name}`
+            `L'équipement trouvé par ${hero1.name} sur le cadavre de ${monster1.name} n'est malheureusement pas au niveau de son ${hero1.shield.name}`
           );
         }
       } else {
@@ -63,11 +63,11 @@ const lootGeneration = (hero1, monster1) => {
     // verifions si l'objet existe
     if (lootTable[lootRaceMonster].loot4) {
       // nous devons maintenant verifier si notre héros possède bien un bouclier sur lui
-      if (hero1.sword) {
+      if (hero1.weapon) {
         // si c'est le cas il faut ensuite verifier si le bouclier looté est meilleur que celui actuel
-        if (lootTable[lootRaceMonster].loot3.attack > hero1.sword.attack) {
+        if (lootTable[lootRaceMonster].loot3.attack > hero1.weapon.attack) {
           // je l'équipe à mon personnage
-          hero1.shield = lootTable[lootRaceMonster].loot4;
+          hero1.weapon = lootTable[lootRaceMonster].loot4;
           console.log(
             `${hero1.name} s'équipe de ${lootTable[lootRaceMonster].loot4.name}`
           );
@@ -79,7 +79,7 @@ const lootGeneration = (hero1, monster1) => {
         }
       } else {
         // je l'équipe à mon personnage
-        hero1.sword = lootTable[lootRaceMonster].loot4;
+        hero1.weapon = lootTable[lootRaceMonster].loot4;
         console.log(
           `${hero1.name} s'équipe de ${lootTable[lootRaceMonster].loot4.name}`
         );

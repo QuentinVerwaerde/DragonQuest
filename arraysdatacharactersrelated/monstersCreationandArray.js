@@ -64,7 +64,7 @@ const everyMonsters = [
 ];
 
 // le combat final
-const arrayfinalBoss = [golem, dragon, bat];
+const arrayfinalBoss = [golem, dragon, ape];
 // on créé un tableau pour la première rencontre
 const arrayEncounterOne = [];
 // on génére le remplissage du tableau correspondant, on veut 2 monstres sur le premier combat
