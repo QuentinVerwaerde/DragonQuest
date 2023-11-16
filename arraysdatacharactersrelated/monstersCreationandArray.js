@@ -34,11 +34,13 @@ const ape2 = new Monsters("Geunon 🦍", 55, 30, 60, "apes", 5);
 const lizardman1 = new Monsters("Frank 🐍", 50, 50, 70, "homme-lezard", 6);
 const lizardman2 = new Monsters("Marc 🐍", 50, 50, 70, "homme-lezard", 6);
 const golem = new Monsters("Kevin 🗿", 90, 20, 150, "golem", 7);
+const dragonchild = new Monsters("Proteus 🐉", 80, 40, 120, "dragon", 8);
+const dragonchild2 = new Monsters("Anguinus 🐉", 80, 40, 120, "dragon", 8);
 const dragon = new Monsters(
   "Dragon Millénaire aux yeux vitreux 🐉",
   100,
-  30,
-  200,
+  45,
+  800,
   "dragon",
   8
 );
@@ -64,7 +66,7 @@ const everyMonsters = [
 ];
 
 // le combat final
-const arrayfinalBoss = [golem, dragon, ape];
+const arrayfinalBoss = [dragonchild, dragon, dragonchild2];
 // on créé un tableau pour la première rencontre
 const arrayEncounterOne = [];
 // on génére le remplissage du tableau correspondant, on veut 2 monstres sur le premier combat

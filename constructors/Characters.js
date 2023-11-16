@@ -19,11 +19,11 @@ class Characters {
 
   // calculer les degats d'une attaque du hero sur les monstres
   getDamage() {
-    return this.weapon ? this.attack + this.weapon : this.attack;
+    return this.weapon ? this.attack + this.weapon.attack : this.attack;
   }
   // calculer la defense à une attaque de notre héros
   getDefense() {
-    return this.shield ? this.defense + this.shield : this.defense;
+    return this.shield ? this.defense + this.shield.defense : this.defense;
   }
 
   //combat
