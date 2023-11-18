@@ -34,7 +34,7 @@ const giftingSwordorShield = (hero) => {
     // si le héros n'a pas ce type d'équipement ou que le sien est moins bon, on équipe
     if (!hero.weapon || sword.defense > hero.weapon.attack) {
       hero.weapon = sword;
-      console.log(`${hero.name} s'équipe avec ${sword.name} }`);
+      console.log(`${hero.name} s'équipe avec ${sword.name}`);
     }
     // si l'épée est moins forte, on ne fait rien
     else if (sword.attack < hero.weapon.attack) {

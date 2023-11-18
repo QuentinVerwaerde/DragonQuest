@@ -29,9 +29,6 @@ const {
   randomNumberGeneration,
 } = require("./gamemechanics/randomnumbergeneration.js");
 const {
-  advancedFightsforHeroesOnly,
-} = require("./gamemechanics/advancedfighting.js");
-const {
   woodstick,
   sword,
   fabledsword,
