@@ -106,100 +106,101 @@ if (heroofLight.life > 0) {
   recruitaRandomHero();
   recruitaRandomHero();
   giftingSwordorShield(heroofLight);
-}
-//
-// Tour 2
-//
-visitingLands();
-// on lance dans la boucle la "Premiere rencontre / round 1"
-// on imprime le nombre de monstres dans la rencontre
-console.log(
-  `⚔️ Pour votre combat n°${randomEncounter} vous rencontrez ${arrayEncounterOne.length} ennemis qui décident de vous attaquer !!! ⚔️`
-);
-while (
-  (heroesinParty[0].life > 0 ||
-    heroesinParty[1].life > 0 ||
-    heroesinParty[2].life > 0) &&
-  (arrayfinalBoss[0].life > 0 ||
-    arrayfinalBoss[1].life > 0 ||
-    arrayfinalBoss[2].life > 0)
-) {
-  // le tour commence
-  turnBasedCombat += 1;
-  console.log(`💪 Début du tour ${turnBasedCombat} 💪`);
-  // on filtre le tableau arrayfinal en fonction de la vie, on ne veut combattre que les monstres en vie
-  let arrayMonsterstoFightThisTurn = [];
-  const newArray = [0, 1, 2];
-  for (const index of newArray) {
-    arrayfinalBoss[index].life > 0
-      ? arrayMonsterstoFightThisTurn.push(arrayfinalBoss[index])
-      : "";
-  }
-  // Héros 1 attaque
-  if (heroesinParty[0].life > 0) {
-    let indexRandomOne = Math.floor(
-      Math.random() * arrayMonsterstoFightThisTurn.length
-    );
-    arrayMonsterstoFightThisTurn[indexRandomOne].life > 0
-      ? heroesinParty[0].fight(arrayMonsterstoFightThisTurn[indexRandomOne])
-      : "";
-  }
-  // Héros 2 attaque
-  if (heroesinParty[1].life > 0) {
-    indexRandomOne = Math.floor(
-      Math.random() * arrayMonsterstoFightThisTurn.length
-    );
-    arrayMonsterstoFightThisTurn[indexRandomOne].life > 0
-      ? heroesinParty[1].fight(arrayMonsterstoFightThisTurn[indexRandomOne])
-      : "";
-  }
-  // Héros 3 attaque
-  if (heroesinParty[2].life > 0) {
-    indexRandomOne = Math.floor(
-      Math.random() * arrayMonsterstoFightThisTurn.length
-    );
-    arrayMonsterstoFightThisTurn[indexRandomOne].life > 0
-      ? heroesinParty[2].fight(arrayMonsterstoFightThisTurn[indexRandomOne])
-      : "";
-  }
-  // je vide le tableau pour la prochaine boucle
-  arrayMonsterstoFightThisTurn = [];
 
-  // les monsters attaques
-  // on filtre le tableau heroesinparty en fonction de la vie, on ne veut combattre que les heros en vie
-  let arrayHeroestoFightThisTurn = [];
-  // on utilise à nouveau newArray
-  for (const index of newArray) {
-    heroesinParty[index].life > 0
-      ? arrayHeroestoFightThisTurn.push(heroesinParty[index])
-      : "";
+  //
+  // Tour 2
+  //
+  visitingLands();
+  // on lance dans la boucle la "Premiere rencontre / round 1"
+  // on imprime le nombre de monstres dans la rencontre
+  console.log(
+    `⚔️ Pour votre combat n°${randomEncounter} vous rencontrez ${arrayEncounterOne.length} ennemis qui décident de vous attaquer !!! ⚔️`
+  );
+  while (
+    (heroesinParty[0].life > 0 ||
+      heroesinParty[1].life > 0 ||
+      heroesinParty[2].life > 0) &&
+    (arrayfinalBoss[0].life > 0 ||
+      arrayfinalBoss[1].life > 0 ||
+      arrayfinalBoss[2].life > 0)
+  ) {
+    // le tour commence
+    turnBasedCombat += 1;
+    console.log(`💪 Début du tour ${turnBasedCombat} 💪`);
+    // on filtre le tableau arrayfinal en fonction de la vie, on ne veut combattre que les monstres en vie
+    let arrayMonsterstoFightThisTurn = [];
+    const newArray = [0, 1, 2];
+    for (const index of newArray) {
+      arrayfinalBoss[index].life > 0
+        ? arrayMonsterstoFightThisTurn.push(arrayfinalBoss[index])
+        : "";
+    }
+    // Héros 1 attaque
+    if (heroesinParty[0].life > 0) {
+      let indexRandomOne = Math.floor(
+        Math.random() * arrayMonsterstoFightThisTurn.length
+      );
+      arrayMonsterstoFightThisTurn[indexRandomOne].life > 0
+        ? heroesinParty[0].fight(arrayMonsterstoFightThisTurn[indexRandomOne])
+        : "";
+    }
+    // Héros 2 attaque
+    if (heroesinParty[1].life > 0) {
+      indexRandomOne = Math.floor(
+        Math.random() * arrayMonsterstoFightThisTurn.length
+      );
+      arrayMonsterstoFightThisTurn[indexRandomOne].life > 0
+        ? heroesinParty[1].fight(arrayMonsterstoFightThisTurn[indexRandomOne])
+        : "";
+    }
+    // Héros 3 attaque
+    if (heroesinParty[2].life > 0) {
+      indexRandomOne = Math.floor(
+        Math.random() * arrayMonsterstoFightThisTurn.length
+      );
+      arrayMonsterstoFightThisTurn[indexRandomOne].life > 0
+        ? heroesinParty[2].fight(arrayMonsterstoFightThisTurn[indexRandomOne])
+        : "";
+    }
+    // je vide le tableau pour la prochaine boucle
+    arrayMonsterstoFightThisTurn = [];
+
+    // les monsters attaques
+    // on filtre le tableau heroesinparty en fonction de la vie, on ne veut combattre que les heros en vie
+    let arrayHeroestoFightThisTurn = [];
+    // on utilise à nouveau newArray
+    for (const index of newArray) {
+      heroesinParty[index].life > 0
+        ? arrayHeroestoFightThisTurn.push(heroesinParty[index])
+        : "";
+    }
+    // Monstre 1 attaque
+    if (arrayfinalBoss[0].life > 0) {
+      let indexRandomOne = Math.floor(
+        Math.random() * arrayHeroestoFightThisTurn.length
+      );
+      arrayHeroestoFightThisTurn[indexRandomOne].life > 0
+        ? arrayfinalBoss[0].fight(arrayHeroestoFightThisTurn[indexRandomOne])
+        : "";
+    }
+    // Monstre 2 attaque
+    if (arrayfinalBoss[1].life > 0) {
+      let indexRandomOne = Math.floor(
+        Math.random() * arrayHeroestoFightThisTurn.length
+      );
+      arrayHeroestoFightThisTurn[indexRandomOne].life > 0
+        ? arrayfinalBoss[1].fight(arrayHeroestoFightThisTurn[indexRandomOne])
+        : "";
+    }
+    // Monstre 3 attaque
+    if (arrayfinalBoss[2].life > 0) {
+      let indexRandomOne = Math.floor(
+        Math.random() * arrayHeroestoFightThisTurn.length
+      );
+      arrayHeroestoFightThisTurn[indexRandomOne].life > 0
+        ? arrayfinalBoss[2].fight(arrayHeroestoFightThisTurn[indexRandomOne])
+        : "";
+    }
   }
-  // Monstre 1 attaque
-  if (arrayfinalBoss[0].life > 0) {
-    let indexRandomOne = Math.floor(
-      Math.random() * arrayHeroestoFightThisTurn.length
-    );
-    arrayHeroestoFightThisTurn[indexRandomOne].life > 0
-      ? arrayfinalBoss[0].fight(arrayHeroestoFightThisTurn[indexRandomOne])
-      : "";
-  }
-  // Monstre 2 attaque
-  if (arrayfinalBoss[1].life > 0) {
-    let indexRandomOne = Math.floor(
-      Math.random() * arrayHeroestoFightThisTurn.length
-    );
-    arrayHeroestoFightThisTurn[indexRandomOne].life > 0
-      ? arrayfinalBoss[1].fight(arrayHeroestoFightThisTurn[indexRandomOne])
-      : "";
-  }
-  // Monstre 3 attaque
-  if (arrayfinalBoss[2].life > 0) {
-    let indexRandomOne = Math.floor(
-      Math.random() * arrayHeroestoFightThisTurn.length
-    );
-    arrayHeroestoFightThisTurn[indexRandomOne].life > 0
-      ? arrayfinalBoss[2].fight(arrayHeroestoFightThisTurn[indexRandomOne])
-      : "";
-  }
+  gameClear(heroesinParty, arrayfinalBoss);
 }
-gameClear(heroesinParty, arrayfinalBoss);

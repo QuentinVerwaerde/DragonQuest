@@ -17,7 +17,7 @@ const giftingSwordorShield = (hero) => {
     // si le héros n'a pas ce type d'équipement ou que le sien est moins bon, on équipe
     if (!hero.shield || bigshield.defense > hero.shield.defense) {
       hero.shield = bigshield;
-      console.log(`${hero.name} s'équipe avec ${bigshield.name} }`);
+      console.log(`${hero.name} s'équipe avec ${bigshield.name}`);
     }
     // si le bouclier est moins fort, on ne fait rien
     else if (bigshield.defense < hero.shield.defense) {
